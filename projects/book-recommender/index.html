@@ -1,9 +1,3 @@
----
-layout: page
-title: Book Recommender
-permalink: ../book-recommender/
----
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,11 +6,11 @@ permalink: ../book-recommender/
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Recommender</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ '/assets../book-recommender/styles.css' | relative_url }}">
+    <link rel="stylesheet" href="">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-50 text-primary flex flex-col min-h-screen">
 
     <!-- Navbar -->
     <header class="sticky top-0 z-50 w-full backdrop-blur-md bg-white/80 border-b border-gray-200">
@@ -30,7 +24,8 @@ permalink: ../book-recommender/
         </div>
     </header>
 
-    
+<main class="flex-grow flex justify-center items-center py-12 px-4">
+
 <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 py-12 w-full">
     <div class="container mx-auto p-4">
         <h1 class="text-3xl font-bold text-center mb-4 text-blue-800">Book Recommender</h1>
@@ -70,11 +65,9 @@ permalink: ../book-recommender/
                 aria-label="Close modal">×</button>
         </div>
     </div>
-    <script src="{{ '/assets../book-recommender/app.js' | relative_url }}"></script>
+    <script src=""></script>
 </main>
 
-    
-    
 
 
 </html>
