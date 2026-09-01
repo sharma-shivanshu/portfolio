@@ -1,199 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Segoe UI', sans-serif; background: transparent; padding: 0.25rem 0; }
-  .grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 1.5rem; }
-  @media(max-width:580px){ .grid { grid-template-columns: 1fr; } }
-  .card { border: 1.5px solid #e8e4de; border-radius: 10px; padding: 1rem 1.2rem; background: #fff; transition: border-color 0.2s, transform 0.2s; }
-  .card:hover { border-color: #3b6cf8; transform: translateY(-2px); }
-  .card-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #6b6b6b; margin-bottom: 0.4rem; }
-  .card-price { font-size: 1.45rem; font-weight: 700; color: #1a1a1a; margin-top: 0.2rem; }
-  .card-change { font-size: 0.82rem; font-weight: 600; margin-top: 0.25rem; }
-  .up { color: #16a34a; } .down { color: #dc2626; }
-  .card-sub { font-size: 0.7rem; color: #6b6b6b; margin-top: 0.15rem; }
-  .badge { font-size: 0.62rem; font-weight: 700; padding: 0.12rem 0.4rem; border-radius: 4px; background: #fef3c7; color: #92400e; margin-left: 0.3rem; }
-  .live-badge { font-size: 0.62rem; font-weight: 700; padding: 0.12rem 0.4rem; border-radius: 4px; background: #dcfce7; color: #166534; margin-left: 0.3rem; }
-  .chart-box { border: 1.5px solid #e8e4de; border-radius: 10px; padding: 1rem 1.2rem; background: #fff; margin-bottom: 1rem; }
-  .chart-title { font-size: 0.82rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.6rem; }
-  .chart-wrap { position: relative; height: 150px; }
-  .updated { font-size: 0.72rem; color: #6b6b6b; margin-top: 0.5rem; }
-</style>
-</head>
-<body>
-
-<div class="grid" id="cards"></div>
-
-<div class="chart-box">
-  <div class="chart-title">Nifty 50 — 7 Day Trend</div>
-  <div class="chart-wrap"><canvas id="cNifty"></canvas></div>
-</div>
-<div class="chart-box">
-  <div class="chart-title">Sensex — 7 Day Trend</div>
-  <div class="chart-wrap"><canvas id="cSensex"></canvas></div>
-</div>
-<div class="chart-box">
-  <div class="chart-title">Gold (INR/10g) — 7 Day Trend</div>
-  <div class="chart-wrap"><canvas id="cGold"></canvas></div>
-</div>
-
-<div class="updated" id="updated">⚠ Showing indicative data · fetching live...</div>
-
-<script>
-const D = {
-  nifty:  { label:'Nifty 50',       unit:'₹', prices:[23080,23210,23150,23380,23290,23450,23360], dates:['Mar 14','Mar 15','Mar 16','Mar 17','Mar 18','Mar 19','Mar 22'], color:'#3b6cf8', cid:'cNifty',  sym:'%5ENSEI',  isGold:false },
-  sensex: { label:'Sensex',         unit:'₹', prices:[76100,76450,76280,76980,76750,77100,76920], dates:['Mar 14','Mar 15','Mar 16','Mar 17','Mar 18','Mar 19','Mar 22'], color:'#8b5cf6', cid:'cSensex', sym:'%5EBSESN', isGold:false },
-  gold:   { label:'Gold (INR/10g)', unit:'₹', prices:[87800,88200,88050,88900,89100,89400,89500], dates:['Mar 14','Mar 15','Mar 16','Mar 17','Mar 18','Mar 19','Mar 22'], color:'#f59e0b', cid:'cGold',   sym:'XAUINR',   isGold:true  }
-};
-
-const charts = {};
-
-function drawCards(live) {
-  let h = '';
-  for (const k of ['nifty','sensex','gold']) {
-    const d = D[k];
-    const p = d.prices;
-    const last = p[p.length-1];
-    const prev = p[p.length-2] || last;
-    const ch   = last - prev;
-    const pct  = ((ch / prev) * 100).toFixed(2);
-    const dir  = ch >= 0 ? 'up' : 'down';
-    const arr  = ch >= 0 ? '▲' : '▼';
-    const badge = live
-      ? '<span class="live-badge">Live</span>'
-      : '<span class="badge">Indicative</span>';
-    h += `<div class="card">
-      <div class="card-label">${d.label}${badge}</div>
-      <div class="card-price">${d.unit}${last.toLocaleString('en-IN')}</div>
-      <div class="card-change ${dir}">${arr} ${Math.abs(ch).toLocaleString('en-IN')} (${Math.abs(pct)}%)</div>
-      <div class="card-sub">vs previous close</div>
-    </div>`;
-  }
-  document.getElementById('cards').innerHTML = h;
-}
-
-function drawChart(key) {
-  const d = D[key];
-  if (charts[key]) charts[key].destroy();
-  charts[key] = new Chart(document.getElementById(d.cid), {
-    type: 'line',
-    data: {
-      labels: d.dates,
-      datasets: [{
-        data: d.prices,
-        borderColor: d.color,
-        backgroundColor: d.color + '22',
-        borderWidth: 2,
-        pointRadius: 4,
-        pointHoverRadius: 6,
-        fill: true,
-        tension: 0.35
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { display: false }, tooltip: { mode: 'index', intersect: false } },
-      scales: {
-        x: { grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { font: { size: 11 }, color: '#6b6b6b' } },
-        y: { grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { font: { size: 11 }, color: '#6b6b6b', callback: v => '₹' + v.toLocaleString('en-IN') } }
-      }
-    }
-  });
-}
-
-function drawAll() {
-  for (const k of ['nifty','sensex','gold']) drawChart(k);
-}
-
-// Show indicative data immediately
-drawCards(false);
-drawAll();
-
-// Try live fetch in background
-async function tryLive() {
-  let hit = false;
-  
-  // Yahoo Finance Symbols
-  const symbols = {
-    nifty: '^NSEI',
-    sensex: '^BSESN',
-    gold: 'GC=F' // Gold Futures USD
-  };
-  
-  // Need USD/INR for gold conversion
-  let usdInr = 83.5; 
-  try {
-    const res = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent('https://query1.finance.yahoo.com/v8/finance/chart/INR=X?interval=1d&range=1d'));
-    const data = await res.json();
-    if(data.chart.result[0].meta.regularMarketPrice) usdInr = data.chart.result[0].meta.regularMarketPrice;
-  } catch(e) {}
-
-  for (const [k, sym] of Object.entries(symbols)) {
-    try {
-      const url = `https://api.allorigins.win/raw?url=` + encodeURIComponent(`https://query1.finance.yahoo.com/v8/finance/chart/${sym}?interval=1d&range=10d`);
-      const res = await fetch(url);
-      const data = await res.json();
-      const result = data.chart.result[0];
-      const timestamps = result.timestamp;
-      const closes = result.indicators.quote[0].close;
-      
-      let rows = [];
-      for (let i = 0; i < timestamps.length; i++) {
-        if (closes[i] !== null && closes[i] !== undefined) {
-          let d = new Date(timestamps[i] * 1000);
-          let dateStr = d.toLocaleDateString('en-IN', { month: 'short', day: 'numeric' });
-          
-          let price = closes[i];
-          // Gold from USD/oz to INR/10g
-          if(k === 'gold') {
-              price = (price * usdInr) / 31.1034768 * 10;
-          }
-          
-          rows.push({ date: dateStr, close: Math.round(price) });
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India Market Tracker | Shivanshu Sharma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { primary: '#0f172a', secondary: '#475569', accent: '#3b82f6' }
+                }
+            }
         }
-      }
-      
-      // take last 7
-      rows = rows.slice(-7);
-      
-      if (rows.length >= 3) {
-        D[k].prices = rows.map(r => r.close);
-        D[k].dates = rows.map(r => r.date);
-        hit = true;
-      }
-    } catch(e) {
-      console.error("Failed fetching for", k, e);
-    }
-  }
-  
-  if (hit) {
-    drawCards(true);
-    drawAll();
-    document.getElementById('updated').textContent = '✓ Live Data (Yahoo Finance) · Updated: ' + new Date().toLocaleTimeString('en-IN');
-  } else {
-    // Generate dates up to today for indicative data
-    let today = new Date();
-    let dates = [];
-    for(let i=6; i>=0; i--) {
-        let d = new Date(today);
-        d.setDate(d.getDate() - i);
-        dates.push(d.toLocaleDateString('en-IN', {month:'short', day:'numeric'}));
-    }
-    D.nifty.dates = dates;
-    D.sensex.dates = dates;
-    D.gold.dates = dates;
-    drawCards(false);
-    drawAll();
-    document.getElementById('updated').textContent = '⚠ Indicative data (live fetch failed) · ' + new Date().toLocaleTimeString('en-IN');
-  }
-}
+    </script>
+    <style>
+        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    </style>
+</head>
+<body class="bg-gray-50 text-primary flex flex-col min-h-screen">
 
-tryLive();
-</script>
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 w-full backdrop-blur-md bg-white/80 border-b border-gray-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="../../index.html" class="text-xl font-bold tracking-tight text-primary hover:text-accent transition-colors">Shivanshu Sharma</a>
+            <nav class="flex gap-6">
+                <a href="../../index.html" class="text-sm font-medium transition-colors hover:text-accent text-secondary">Home</a>
+                <a href="../../projects/index.html" class="text-sm font-medium transition-colors hover:text-accent text-accent">Projects</a>
+                <a href="../../about.html" class="text-sm font-medium transition-colors hover:text-accent text-secondary">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 py-12 w-full">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-8 border-b border-gray-200 pb-6 gap-4">
+            <div>
+                <h1 class="text-4xl font-extrabold text-primary mb-2">India Market Tracker</h1>
+                <p class="text-secondary text-lg">Real-time market dashboard powered by TradingView.</p>
+            </div>
+            <div>
+                <div class="inline-flex items-center px-4 py-2 bg-emerald-50 border border-emerald-200 rounded-lg shadow-sm">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 mr-2 animate-pulse"></span>
+                    <span class="text-sm font-bold text-emerald-700 uppercase tracking-wide">Live Markets</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <!-- Nifty 50 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="p-4 border-b border-gray-100 bg-gray-50 flex justify-between items-center">
+                    <h2 class="text-lg font-bold text-primary">NIFTY 50</h2>
+                    <span class="text-xs font-bold text-gray-500 bg-gray-200 px-2 py-1 rounded">NSE</span>
+                </div>
+                <div class="h-[400px] w-full">
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container" style="height:100%;width:100%">
+                      <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
+                      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+                      {
+                      "autosize": true,
+                      "symbol": "NSE:NIFTY",
+                      "interval": "D",
+                      "timezone": "Asia/Kolkata",
+                      "theme": "light",
+                      "style": "2",
+                      "locale": "in",
+                      "enable_publishing": false,
+                      "backgroundColor": "rgba(255, 255, 255, 1)",
+                      "gridColor": "rgba(240, 243, 250, 0)",
+                      "hide_top_toolbar": true,
+                      "hide_legend": true,
+                      "save_image": false,
+                      "container_id": "tradingview_nifty",
+                      "support_host": "https://www.tradingview.com"
+                    }
+                      </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+                </div>
+            </div>
+
+            <!-- Sensex -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="p-4 border-b border-gray-100 bg-gray-50 flex justify-between items-center">
+                    <h2 class="text-lg font-bold text-primary">SENSEX</h2>
+                    <span class="text-xs font-bold text-gray-500 bg-gray-200 px-2 py-1 rounded">BSE</span>
+                </div>
+                <div class="h-[400px] w-full">
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container" style="height:100%;width:100%">
+                      <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
+                      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+                      {
+                      "autosize": true,
+                      "symbol": "BSE:SENSEX",
+                      "interval": "D",
+                      "timezone": "Asia/Kolkata",
+                      "theme": "light",
+                      "style": "2",
+                      "locale": "in",
+                      "enable_publishing": false,
+                      "backgroundColor": "rgba(255, 255, 255, 1)",
+                      "gridColor": "rgba(240, 243, 250, 0)",
+                      "hide_top_toolbar": true,
+                      "hide_legend": true,
+                      "save_image": false,
+                      "container_id": "tradingview_sensex",
+                      "support_host": "https://www.tradingview.com"
+                    }
+                      </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Gold & USD/INR -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Gold Spot -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="p-4 border-b border-gray-100 bg-gray-50 flex justify-between items-center">
+                    <h2 class="text-lg font-bold text-primary">GOLD SPOT (MCX)</h2>
+                    <span class="text-xs font-bold text-gray-500 bg-gray-200 px-2 py-1 rounded">MCX</span>
+                </div>
+                <div class="h-[300px] w-full">
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container" style="height:100%;width:100%">
+                      <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
+                      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+                      {
+                      "autosize": true,
+                      "symbol": "MCX:GOLD1!",
+                      "interval": "D",
+                      "timezone": "Asia/Kolkata",
+                      "theme": "light",
+                      "style": "2",
+                      "locale": "in",
+                      "enable_publishing": false,
+                      "backgroundColor": "rgba(255, 255, 255, 1)",
+                      "gridColor": "rgba(240, 243, 250, 0)",
+                      "hide_top_toolbar": true,
+                      "hide_legend": true,
+                      "save_image": false,
+                      "container_id": "tradingview_gold",
+                      "support_host": "https://www.tradingview.com"
+                    }
+                      </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+                </div>
+            </div>
+            
+            <!-- USD/INR -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="p-4 border-b border-gray-100 bg-gray-50 flex justify-between items-center">
+                    <h2 class="text-lg font-bold text-primary">USD / INR</h2>
+                    <span class="text-xs font-bold text-gray-500 bg-gray-200 px-2 py-1 rounded">FOREX</span>
+                </div>
+                <div class="h-[300px] w-full">
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container" style="height:100%;width:100%">
+                      <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
+                      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+                      {
+                      "autosize": true,
+                      "symbol": "FX_IDC:USDINR",
+                      "interval": "D",
+                      "timezone": "Asia/Kolkata",
+                      "theme": "light",
+                      "style": "2",
+                      "locale": "in",
+                      "enable_publishing": false,
+                      "backgroundColor": "rgba(255, 255, 255, 1)",
+                      "gridColor": "rgba(240, 243, 250, 0)",
+                      "hide_top_toolbar": true,
+                      "hide_legend": true,
+                      "save_image": false,
+                      "container_id": "tradingview_usdinr",
+                      "support_host": "https://www.tradingview.com"
+                    }
+                      </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto border-t border-gray-200 bg-white py-8">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-sm text-secondary">© <span id="year"></span> Shivanshu Sharma. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="https://github.com/uhsnavihs23" target="_blank" class="text-secondary hover:text-accent transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="https://linkedin.com/in/shivanshu-sharma-2302" target="_blank" class="text-secondary hover:text-accent transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
