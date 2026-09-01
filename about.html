@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Shivanshu Sharma</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        .social-links {
+            margin-top: 30px;
+        }
+        .social-links a {
+            display: inline-block;
+            margin-right: 15px;
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="/index.html" class="logo">Shivanshu Sharma</a>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/projects/index.html">Projects</a></li>
+                    <li><a href="/about.html" style="color: var(--link-color);">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container" style="padding-top: 60px;">
+            <h1 class="section-title">About Me</h1>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Hello, I'm <strong>Shivanshu Sharma</strong>. I am a Strategy & Management Consultant, and an alumnus of IIT Gandhinagar.
+                    </p>
+                    <p>
+                        My work revolves around the intersection of data, policy, and technology. I am passionate about transforming raw data into structured insights, analyzing urban governance, and building functional web applications.
+                    </p>
+                    <p>
+                        In my projects, I aim to create simple, effective solutions—whether that means finding actionable insights in a dataset, analyzing complex policy issues, or developing intuitive browser-based tools.
+                    </p>
+                    
+                    <div class="social-links">
+                        <a href="mailto:shivanshu.sharma0023@gmail.com">Email Me</a>
+                        <a href="https://github.com/uhsnavihs23" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="https://linkedin.com/in/shivanshu-sharma-2302" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Shivanshu Sharma. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
