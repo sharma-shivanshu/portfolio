@@ -47,10 +47,24 @@ proj_idx = get_tailwind_head("Projects", 1) + get_header(1, 'projects') + '''
         <!-- Web Apps -->
         <section class="mb-20">
             <div class="flex items-center mb-8">
-                <h2 class="text-2xl font-bold text-primary">Web Applications</h2>
+                <h2 class="text-2xl font-bold text-primary">Web Applications & Utilities</h2>
                 <div class="h-px bg-gray-200 flex-grow ml-6"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- NEW: Pomodoro Timer -->
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col">
+                    <h3 class="text-xl font-bold text-primary mb-2">Pomodoro Focus Room</h3>
+                    <p class="text-secondary text-sm mb-4 flex-grow">A sleek, distraction-free productivity timer with Pomodoro, short, and long break intervals.</p>
+                    <a href="./pomodoro-timer/index.html" class="text-accent font-medium hover:underline mt-auto">Start Timer &rarr;</a>
+                </div>
+                <!-- NEW: Budget Visualizer -->
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col">
+                    <h3 class="text-xl font-bold text-primary mb-2">Personal Budget Visualizer</h3>
+                    <p class="text-secondary text-sm mb-4 flex-grow">Input your income and expenses to instantly generate a breakdown of your cash flow using Chart.js.</p>
+                    <a href="./budget-visualizer/index.html" class="text-accent font-medium hover:underline mt-auto">View App &rarr;</a>
+                </div>
+
                 <!-- Market Tracker -->
                 <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col">
                     <h3 class="text-xl font-bold text-primary mb-2">India Market Tracker</h3>
@@ -71,11 +85,6 @@ proj_idx = get_tailwind_head("Projects", 1) + get_header(1, 'projects') + '''
                     <h3 class="text-xl font-bold text-primary mb-2">GitHub Profile Finder</h3>
                     <p class="text-secondary text-sm mb-4 flex-grow">Analytics dashboard to search and explore GitHub user profiles, repos, and language breakdowns.</p>
                     <a href="./github-profile-finder/index.html" class="text-accent font-medium hover:underline mt-auto">View Dashboard &rarr;</a>
-                </div>
-                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col">
-                    <h3 class="text-xl font-bold text-primary mb-2">News Hub</h3>
-                    <p class="text-secondary text-sm mb-4 flex-grow">Aggregates live news headlines across categories using a stable RSS-to-JSON aggregator.</p>
-                    <a href="./news-app/index.html" class="text-accent font-medium hover:underline mt-auto">View Hub &rarr;</a>
                 </div>
             </div>
         </section>
