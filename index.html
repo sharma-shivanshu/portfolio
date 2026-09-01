@@ -3,73 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shivanshu Sharma | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Portfolio | Shivanshu Sharma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { primary: '#0f172a', secondary: '#475569', accent: '#3b82f6' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50 text-primary flex flex-col min-h-screen">
 
-        <header>
-        <div class="container nav-wrapper">
-            <a href="./index.html" class="logo">Shivanshu Sharma</a>
-            <nav>
-                <ul>
-                    <li><a href="./index.html" style="color: var(--link-color);">Home</a></li>
-                    <li><a href="./projects/index.html">Projects</a></li>
-                    <li><a href="./about.html">About</a></li>
-                </ul>
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 w-full backdrop-blur-md bg-white/80 border-b border-gray-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="./index.html" class="text-xl font-bold tracking-tight text-primary hover:text-accent transition-colors">Shivanshu Sharma</a>
+            <nav class="flex gap-6">
+                <a href="./index.html" class="text-sm font-medium transition-colors hover:text-accent text-accent">Home</a>
+                <a href="./projects/index.html" class="text-sm font-medium transition-colors hover:text-accent text-secondary">Projects</a>
+                <a href="./about.html" class="text-sm font-medium transition-colors hover:text-accent text-secondary">About</a>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="hero container">
-            <h1>Strategy, Data & Policy</h1>
-            <p>I am a Strategy & Management Consultant and IIT Gandhinagar alumnus. I transform raw data into structured insights and explore ideas in technology and urban governance.</p>
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="max-w-5xl mx-auto px-4 sm:px-6 py-20 lg:py-32 flex flex-col-reverse md:flex-row items-center gap-12">
+            <div class="flex-1 text-center md:text-left">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-primary mb-6">
+                    Strategy, Data <span class="text-accent">&</span> Policy
+                </h1>
+                <p class="text-lg text-secondary mb-8 max-w-2xl leading-relaxed">
+                    I am a Strategy & Management Consultant and IIT Gandhinagar alumnus. I transform raw data into structured insights, analyze urban governance, and build elegant web applications.
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="./projects/index.html" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-accent hover:bg-blue-700 transition-colors shadow-sm">
+                        View My Work
+                    </a>
+                    <a href="./about.html" class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-lg text-primary bg-white hover:bg-gray-50 transition-colors shadow-sm">
+                        More About Me
+                    </a>
+                </div>
+            </div>
+            <div class="flex-shrink-0 relative">
+                <div class="absolute inset-0 bg-blue-100 rounded-full blur-3xl opacity-50 -z-10"></div>
+                <img src="https://avatars.githubusercontent.com/u/67822353?v=4" alt="Shivanshu Sharma" class="w-48 h-48 sm:w-64 sm:h-64 rounded-full object-cover border-4 border-white shadow-xl">
+            </div>
         </section>
 
-        <section class="container">
-            <h2 class="section-title">Featured Work</h2>
-            <div class="projects-grid">
+        <!-- Featured Projects -->
+        <section class="bg-white py-20 border-t border-gray-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6">
+                <h2 class="text-3xl font-bold text-primary mb-2 text-center">Featured Work</h2>
+                <div class="w-16 h-1 bg-accent mx-auto rounded mb-12"></div>
                 
-                <!-- Project 1 -->
-                <article class="project-card">
-                    <div class="project-category">Data Analytics</div>
-                    <h3 class="project-title">India Market Tracker</h3>
-                    <p class="project-desc">Live prices and 7-day trend charts for Nifty 50, Sensex, and Gold without needing any API keys.</p>
-                    <a href="./projects/market-tracker/index.html" class="project-link">View Project &rarr;</a>
-                </article>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <a href="./projects/market-tracker/index.html" class="group block h-full bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="h-48 bg-gray-200 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=800" alt="Market Tracker" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <span class="absolute bottom-4 left-4 px-3 py-1 bg-blue-500 text-white text-xs font-bold rounded-full uppercase tracking-wide">Data Analytics</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-accent transition-colors">India Market Tracker</h3>
+                            <p class="text-secondary text-sm leading-relaxed">Live prices and 7-day trend charts for Nifty 50, Sensex, and Gold. Built without needing any API keys.</p>
+                        </div>
+                    </a>
 
-                <!-- Project 2 -->
-                <article class="project-card">
-                    <div class="project-category">Policy</div>
-                    <h3 class="project-title">Urban Governance in India</h3>
-                    <p class="project-desc">A structural analysis of what's broken in urban governance and how cities can be fixed from the ground up.</p>
-                    <a href="./projects/urban-governance.html" class="project-link">Read Article &rarr;</a>
-                </article>
+                    <!-- Card 2 -->
+                    <a href="./projects/urban-governance.html" class="group block h-full bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="h-48 bg-gray-200 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&q=80&w=800" alt="Urban Governance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <span class="absolute bottom-4 left-4 px-3 py-1 bg-amber-500 text-white text-xs font-bold rounded-full uppercase tracking-wide">Policy</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-accent transition-colors">Urban Governance in India</h3>
+                            <p class="text-secondary text-sm leading-relaxed">A structural analysis of what's broken in urban governance and how cities can be fixed from the ground up.</p>
+                        </div>
+                    </a>
 
-                <!-- Project 3 -->
-                <article class="project-card">
-                    <div class="project-category">Web App</div>
-                    <h3 class="project-title">Image Editor Web App</h3>
-                    <p class="project-desc">Browser-based image editing tool with filters, adjustments, and multi-format export support.</p>
-                    <a href="./projects/image-filter-app/index.html" class="project-link">View Project &rarr;</a>
-                </article>
-
-            </div>
-            
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="/projects/portfolio/index.html" class="project-link" style="font-size: 1.1rem;">View All Projects &rarr;</a>
+                    <!-- Card 3 -->
+                    <a href="./projects/image-filter-app/index.html" class="group block h-full bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="h-48 bg-gray-200 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800" alt="Image Editor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <span class="absolute bottom-4 left-4 px-3 py-1 bg-emerald-500 text-white text-xs font-bold rounded-full uppercase tracking-wide">Web App</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-accent transition-colors">Image Editor Studio</h3>
+                            <p class="text-secondary text-sm leading-relaxed">Browser-based image editing tool with filters, adjustments, cropping, and multi-format export support.</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="./projects/index.html" class="inline-flex items-center justify-center font-medium text-accent hover:text-blue-700 group">
+                        Explore all projects 
+                        <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; <span id="year"></span> Shivanshu Sharma. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="mt-auto border-t border-gray-200 bg-white py-8">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-sm text-secondary">© <span id="year"></span> Shivanshu Sharma. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="https://github.com/uhsnavihs23" target="_blank" class="text-secondary hover:text-accent transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="https://linkedin.com/in/shivanshu-sharma-2302" target="_blank" class="text-secondary hover:text-accent transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
         </div>
     </footer>
-
-    <script src="./js/script.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

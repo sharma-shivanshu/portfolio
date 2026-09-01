@@ -4,25 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Delivery Analytics | Shivanshu Sharma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <!-- GLOBAL STYLES FOR CONSISTENCY -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../../css/style.css">
-    
-    <header style="background-color: var(--header-bg); border-bottom: 1px solid var(--border-color);">
-        <div class="container nav-wrapper" style="max-width: 1100px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; height: 70px;">
-            <a href="../../../index.html" class="logo" style="font-size: 1.5rem; font-weight: 700; text-decoration: none; color: var(--accent-color); letter-spacing: -0.5px;">Shivanshu Sharma</a>
-            <nav>
-                <ul style="list-style: none; display: flex; gap: 20px; margin:0; padding:0;">
-                    <li><a href="../../../index.html" style="text-decoration: none; font-weight: 500;">Home</a></li>
-                    <li><a href="../../..../index.html" style="color: var(--link-color);" style="text-decoration: none; font-weight: 500;">Projects</a></li>
-                    <li><a href="../../../about.html" style="text-decoration: none; font-weight: 500;">About</a></li>
-                </ul>
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 w-full backdrop-blur-md bg-white/80 border-b border-gray-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="../../../index.html" class="text-xl font-bold tracking-tight text-primary hover:text-accent transition-colors">Shivanshu Sharma</a>
+            <nav class="flex gap-6">
+                <a href="../../../index.html" class="text-sm font-medium transition-colors hover:text-accent text-secondary">Home</a>
+                <a href="../../../projects/index.html" class="text-sm font-medium transition-colors hover:text-accent text-accent">Projects</a>
+                <a href="../../../about.html" class="text-sm font-medium transition-colors hover:text-accent text-secondary">About</a>
             </nav>
         </div>
     </header>
-<main style="padding: 40px 20px; min-height: 70vh;">
+
+    
+<main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 py-12 w-full">
     <div style="max-width: 800px; margin: 0 auto; font-family: 'Inter', sans-serif; line-height: 1.6;">
         <h1 style="color: #2c3e50; font-size: 2.5rem; margin-bottom: 20px;">Food Delivery Analytics</h1>
         <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 30px;">
@@ -32,12 +31,7 @@
     </div>
 </main>
 
-    <footer style="text-align: center; padding: 40px 0; border-top: 1px solid var(--border-color); margin-top: 40px; color: var(--secondary-text);">
-        <div class="container">
-            <p>&copy; <span id="year"></span> Shivanshu Sharma. All rights reserved.</p>
-        </div>
-    </footer>
-    <script src="../../../js/script.js"></script>
+    
     
 
 </html>
