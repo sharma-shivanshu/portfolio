@@ -7,10 +7,27 @@
     <title>Image Editing App</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cropperjs@1.5.13/dist/cropper.min.css">
-    <link rel="stylesheet" href="/projects/image-filter-app/style.css">
+    <link rel="stylesheet" href="../image-filter-app/style.css">
 </head>
 
 <body class="bg-gray-100 flex justify-center items-center min-h-screen">
+    <!-- GLOBAL STYLES FOR CONSISTENCY -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    
+    <header style="background-color: var(--header-bg); border-bottom: 1px solid var(--border-color);">
+        <div class="container nav-wrapper" style="max-width: 1100px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; height: 70px;">
+            <a href="../../index.html" class="logo" style="font-size: 1.5rem; font-weight: 700; text-decoration: none; color: var(--accent-color); letter-spacing: -0.5px;">Shivanshu Sharma</a>
+            <nav>
+                <ul style="list-style: none; display: flex; gap: 20px; margin:0; padding:0;">
+                    <li><a href="../../index.html" style="text-decoration: none; font-weight: 500;">Home</a></li>
+                    <li><a href="../..../index.html" style="color: var(--link-color);" style="text-decoration: none; font-weight: 500;">Projects</a></li>
+                    <li><a href="../../about.html" style="text-decoration: none; font-weight: 500;">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<main style="padding: 40px 20px; min-height: 70vh;">
     <div class="container bg-white p-6 rounded-lg shadow-lg max-w-5xl w-full">
         <h1 class="text-3xl font-bold text-gray-800 mb-4 text-center">Image Editing App</h1>
         <p class="text-gray-600 mb-4 text-center">Upload an image (PNG, JPEG, WebP, HEIC) to edit or convert.</p>
@@ -168,7 +185,16 @@
     <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/cropperjs@1.5.13/dist/cropper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gif.js@0.2.0/dist/gif.min.js"></script>
-    <script src="/projects/image-filter-app/script.js"></script>
-</body>
+    <script src="../image-filter-app/script.js"></script>
+</main>
+
+    <footer style="text-align: center; padding: 40px 0; border-top: 1px solid var(--border-color); margin-top: 40px; color: var(--secondary-text);">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Shivanshu Sharma. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="../../js/script.js"></script>
+    
+
 
 </html>
