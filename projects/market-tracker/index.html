@@ -1,0 +1,43 @@
+---
+layout: page
+title: India Market Tracker
+permalink: /projects/market-tracker/
+---
+
+<style>
+.mt-intro { font-size: 0.95rem; color: var(--text-muted-color); margin-bottom: 1.5rem; }
+.mt-frame {
+  width: 100%; border: none;
+  border-radius: 12px; min-height: 900px;
+  display: block;
+}
+.mt-note {
+  font-size: 0.8rem; color: var(--text-muted-color); margin-top: 1rem;
+  padding: 0.75rem 1rem; background: var(--highlight-bg);
+  border-radius: 8px; border: 1px solid var(--border-color);
+}
+</style>
+
+<p class="mt-intro">Live prices and 7-day trends for Nifty 50, Sensex, and Gold. Data via Stooq.</p>
+
+<iframe
+  src="/assets/tools/market-tracker.html"
+  class="mt-frame"
+  id="mtFrame"
+  scrolling="no"
+  title="India Market Tracker">
+</iframe>
+
+<div class="mt-note">
+  <strong>Note:</strong> Prices are indicative and may be delayed. Not financial advice.
+</div>
+
+<script>
+  // Auto-resize iframe to content height
+  const frame = document.getElementById('mtFrame');
+  frame.addEventListener('load', function() {
+    try {
+      frame.style.height = frame.contentDocument.body.scrollHeight + 40 + 'px';
+    } catch(e) {}
+  });
+</script>
