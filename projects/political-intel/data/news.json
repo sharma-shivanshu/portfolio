@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T21:20:46.939343+00:00",
+  "generated_at": "2026-10-25T23:42:57.108590+00:00",
   "stories": [
     {
       "id": "1f58f1b10599a9ca1c9972377d65fe87",
@@ -12001,6 +12001,19 @@
       "lang": "en"
     },
     {
+      "id": "78d68b03307b7a8aad930089479e497d",
+      "title": "Venezuelan opposition leader María Machado returns after months in exile",
+      "link": "https://www.bbc.co.uk/news/articles/cq8ez592pp0eo?at_medium=RSS&at_campaign=rss",
+      "summary": "Machado had left the country just a month before the US government seized Venezuelan President Nicolás Maduro.",
+      "date": "2026-10-25",
+      "timestamp": "Sun, 25 Oct 2026 23:33:14 GMT",
+      "section": "International",
+      "report_category": "International",
+      "source": "BBC World",
+      "district": "",
+      "lang": "en"
+    },
+    {
       "id": "bc4ec29e29874d4a354e740c399be8e5",
       "title": "19 candidates in fray for VMC Mayor’s post",
       "link": "https://www.thehindu.com/news/national/andhra-pradesh/19-candidates-in-fray-for-vmc-mayors-post/article71624110.ece",
@@ -12075,6 +12088,32 @@
       "section": "National",
       "report_category": "National_General",
       "source": "The Hindu",
+      "district": "",
+      "lang": "en"
+    },
+    {
+      "id": "abf927fc5e8df95a0e3796da031b7624",
+      "title": "Bulgaria election heads to a run-off amid low voter turnout",
+      "link": "https://www.aljazeera.com/news/2026/10/25/bulgaria-election-heads-to-a-run-off-amid-low-voter-turnout?traffic_source=rss",
+      "summary": "Bulgarians will now choose between President Iliana Yotova and former caretaker Prime Minister Andrey Gyurov next week.",
+      "date": "2026-10-25",
+      "timestamp": "Sun, 25 Oct 2026 22:57:17 +0000",
+      "section": "International",
+      "report_category": "International",
+      "source": "Al Jazeera",
+      "district": "",
+      "lang": "en"
+    },
+    {
+      "id": "cf1c84103e57e19215045bdcbdb69e37",
+      "title": "Serbia's veteran ruler Vučić concedes election to student-led protest movement",
+      "link": "https://www.bbc.co.uk/news/articles/cw5yn3xlprpmo?at_medium=RSS&at_campaign=rss",
+      "summary": "The populist right-wing leader of 12 years says it is \"clear\" his party has lost the vote billed as a referendum on the country's future.",
+      "date": "2026-10-25",
+      "timestamp": "Sun, 25 Oct 2026 22:54:57 GMT",
+      "section": "International",
+      "report_category": "International",
+      "source": "BBC World",
       "district": "",
       "lang": "en"
     },
@@ -12248,6 +12287,19 @@
       "lang": "en"
     },
     {
+      "id": "5f976c2e9783832bf998e3f1d310d161",
+      "title": "Real Madrid beat Barcelona 2-1 at Camp Nou to halve gap to La Liga leaders",
+      "link": "https://www.aljazeera.com/sports/2026/10/25/real-madrid-beat-barcelona-2-1-at-camp-nou-to-halve-gap-to-la-liga-leaders?traffic_source=rss",
+      "summary": "French superstar Kylian Mbappe scores a brace for Madrid to inflict Barcelona's first domestic defeat of the campaign.",
+      "date": "2026-10-25",
+      "timestamp": "Sun, 25 Oct 2026 22:22:53 +0000",
+      "section": "International",
+      "report_category": "International",
+      "source": "Al Jazeera",
+      "district": "",
+      "lang": "en"
+    },
+    {
       "id": "b00ef39721e0d3216191d83fe4e183fd",
       "title": "Behind China’s AI gift, a constraint",
       "link": "https://www.thehindu.com/news/international/behind-chinas-ai-gift-a-constraint/article71281433.ece",
@@ -12326,6 +12378,19 @@
       "lang": "en"
     },
     {
+      "id": "fa0a466988f0dc8f13d8325b7a02bc0d",
+      "title": "Deeply divided Israel braces for pivotal election",
+      "link": "https://www.bbc.co.uk/news/articles/ckpdgy6pl7xlo?at_medium=RSS&at_campaign=rss",
+      "summary": "After three years of regional war, this is a battle Israel always knew was coming, writes Lucy Williamson.",
+      "date": "2026-10-25",
+      "timestamp": "Sun, 25 Oct 2026 22:11:13 GMT",
+      "section": "International",
+      "report_category": "International",
+      "source": "BBC World",
+      "district": "",
+      "lang": "en"
+    },
+    {
       "id": "f159b6354c9aa7c38e28523e17fbb022",
       "title": "Netanyahu warns Iran may try to disrupt Israel election, says 'don't test us'",
       "link": "https://www.thehindu.com/news/international/netanyahu-warns-iran-may-try-to-disrupt-israel-election-says-dont-test-us/article71624345.ece",
@@ -12374,6 +12439,19 @@
       "section": "National",
       "report_category": "National_Opposition",
       "source": "The Hindu",
+      "district": "",
+      "lang": "en"
+    },
+    {
+      "id": "3274643ec811211efbe0dae53421d758",
+      "title": "Why Israel's election is one of the most important in its history",
+      "link": "https://www.bbc.co.uk/news/videos/c64g1wje3jjwo?at_medium=RSS&at_campaign=rss",
+      "summary": "Security and democracy emerge as central issues in Israel's highly anticipated general election, as Middle East correspondent Lucy Williamson reports.",
+      "date": "2026-10-25",
+      "timestamp": "Sun, 25 Oct 2026 22:05:30 GMT",
+      "section": "International",
+      "report_category": "International",
+      "source": "BBC World",
       "district": "",
       "lang": "en"
     },
@@ -12456,6 +12534,19 @@
       "lang": "en"
     },
     {
+      "id": "6a293ee13eea478f8fed306cbb04e9be",
+      "title": "Marine Le Pen vows French ‘renaissance’ as far right eyes seat of power",
+      "link": "https://www.aljazeera.com/news/2026/10/25/marine-le-pen-vows-a-french-renaissance-as-far-right-eyes-seat-of-power?traffic_source=rss",
+      "summary": "National Rally's Le Pen launches presidential campaign against backdrop of protests and social, economic discontent.",
+      "date": "2026-10-25",
+      "timestamp": "Sun, 25 Oct 2026 21:50:36 +0000",
+      "section": "International",
+      "report_category": "International",
+      "source": "Al Jazeera",
+      "district": "",
+      "lang": "en"
+    },
+    {
       "id": "1c437a0ac8b4410e7964b44debd630d9",
       "title": "Why is Rahul Gandhi silent on his promises to Telangana youth: KTR",
       "link": "https://www.thehindu.com/news/national/telangana/why-is-rahul-gandhi-silent-on-his-promises-to-telangana-youth-ktr/article71624226.ece",
@@ -12465,6 +12556,32 @@
       "section": "National",
       "report_category": "National_Opposition",
       "source": "The Hindu",
+      "district": "",
+      "lang": "en"
+    },
+    {
+      "id": "0c2ed334fa10d243d06ade04ea6389d2",
+      "title": "US Attorney General Todd Blanche defends Alaska Senate election lawsuit",
+      "link": "https://www.aljazeera.com/news/2026/10/25/us-attorney-general-todd-blanche-defends-alaska-senate-election-lawsuit?traffic_source=rss",
+      "summary": "The Department of Justice has faced criticism that its lawsuit is aimed at blocking a Democratic victory in a key race.",
+      "date": "2026-10-25",
+      "timestamp": "Sun, 25 Oct 2026 21:41:10 +0000",
+      "section": "International",
+      "report_category": "International",
+      "source": "Al Jazeera",
+      "district": "",
+      "lang": "en"
+    },
+    {
+      "id": "d2127aad4304730c94c3bfbef977d7d2",
+      "title": "Marine Le Pen launches French presidential campaign",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/25/marine-le-pen-launches-french-presidential-campaign?traffic_source=rss",
+      "summary": "Marine Le Pen launches French presidential campaign",
+      "date": "2026-10-25",
+      "timestamp": "Sun, 25 Oct 2026 21:39:13 +0000",
+      "section": "International",
+      "report_category": "International",
+      "source": "Al Jazeera",
       "district": "",
       "lang": "en"
     },
@@ -12556,6 +12673,19 @@
       "section": "National",
       "report_category": "National_General",
       "source": "The Hindu",
+      "district": "",
+      "lang": "en"
+    },
+    {
+      "id": "e36ac97cacc62ac147ceee37d22c51aa",
+      "title": "Trump VS California",
+      "link": "https://www.aljazeera.com/video/newsfeed/2026/10/25/trump-vs-california?traffic_source=rss",
+      "summary": "The Democrats have redrawn district lines in a bid to flip five Republican-held seats in California.",
+      "date": "2026-10-25",
+      "timestamp": "Sun, 25 Oct 2026 21:29:23 +0000",
+      "section": "International",
+      "report_category": "International",
+      "source": "Al Jazeera",
       "district": "",
       "lang": "en"
     },
@@ -12660,19 +12790,6 @@
       "section": "National",
       "report_category": "National_Judicial",
       "source": "The Hindu",
-      "district": "",
-      "lang": "en"
-    },
-    {
-      "id": "cf1c84103e57e19215045bdcbdb69e37",
-      "title": "Serbia's Vučić concedes election defeat to student-led protest movement",
-      "link": "https://www.bbc.co.uk/news/articles/cw5yn3xlprpmo?at_medium=RSS&at_campaign=rss",
-      "summary": "The country's populist right-wing leader of 12 years says it is \"clear\" his Serbian Progressive Party has lost.",
-      "date": "2026-10-25",
-      "timestamp": "Sun, 25 Oct 2026 21:10:47 GMT",
-      "section": "International",
-      "report_category": "International",
-      "source": "BBC World",
       "district": "",
       "lang": "en"
     },
@@ -13003,9 +13120,9 @@
     },
     {
       "id": "d6d57c9504ee79ab6ce6e1d05f1bc54f",
-      "title": "Brazil election results 2026 live: Lula-Bolsonaro voting extended by 2 hours",
+      "title": "Brazil election results 2026 live: Vote counting begins for Lula, Bolsonaro",
       "link": "https://www.aljazeera.com/news/liveblog/2026/10/25/brazil-election-results-2026-live-polls-close-in-lula-bolsonaro-face-off?traffic_source=rss",
-      "summary": "Brazilian President Luiz Inacio Lula da Silva and Senator Flavio Bolsonaro square off in closely watched election.",
+      "summary": "Legal challenges are likely, as the voting extension adds tension to Brazil's polarised political landscape.",
       "date": "2026-10-25",
       "timestamp": "Sun, 25 Oct 2026 20:00:04 +0000",
       "section": "International",
@@ -13523,9 +13640,9 @@
     },
     {
       "id": "a969234d05e96dd395d52926bf240fce",
-      "title": "Serbia voter turnout highest in decades as students oppose longtime leader",
+      "title": "Serbia’s Vucic concedes election defeat to student-led movement",
       "link": "https://www.aljazeera.com/news/2026/10/25/serbia-voter-turnout-highest-in-decades-as-students-oppose-longtime-leader?traffic_source=rss",
-      "summary": "Election commission says turnout reaches 65% amid allegations of intimidation, violence and voting irregularities.",
+      "summary": "Vucic says the opposition Student List is projected to win a parliamentary majority after nearly two years of protests.",
       "date": "2026-10-25",
       "timestamp": "Sun, 25 Oct 2026 19:19:54 +0000",
       "section": "International",
@@ -13730,19 +13847,6 @@
       "lang": "en"
     },
     {
-      "id": "78d68b03307b7a8aad930089479e497d",
-      "title": "Venezuelan opposition leader María Machado returns after months in exile",
-      "link": "https://www.bbc.co.uk/news/articles/cq8ez592pp0eo?at_medium=RSS&at_campaign=rss",
-      "summary": "Machado had left the country just a month before the US government seized Venezuelan President Nicolás Maduro.",
-      "date": "2026-10-25",
-      "timestamp": "Sun, 25 Oct 2026 18:29:00 GMT",
-      "section": "International",
-      "report_category": "International",
-      "source": "BBC World",
-      "district": "",
-      "lang": "en"
-    },
-    {
       "id": "d7c9203778111a24d8156a65f798158f",
       "title": "Will Michael Carrick be sacked? Man United manager says he doesn’t know",
       "link": "https://www.aljazeera.com/sports/2026/10/25/will-michael-carrick-be-sacked-man-united-manager-says-he-doesnt-know?traffic_source=rss",
@@ -13939,9 +14043,9 @@
     },
     {
       "id": "6f95970c0aea88cd34b8e7423d389aa2",
-      "title": "Barcelona vs Real Madrid LIVE: La Liga El Clasico",
+      "title": "Barcelona 1-2 Real Madrid: La Liga El Clasico – as it happened",
       "link": "https://www.aljazeera.com/sports/liveblog/2026/10/25/barcelona-vs-real-madrid-live-la-liga-el-clasico?traffic_source=rss",
-      "summary": "Follow updates from El Clasico at Camp Nou, including the build-up, analysis and live text commentary of the game.",
+      "summary": "All the updates as Real Madrid ⁠become ⁠the first side to beat Barcelona in La Liga this season.",
       "date": "2026-10-25",
       "timestamp": "Sun, 25 Oct 2026 16:30:00 +0000",
       "section": "International",
@@ -36879,6 +36983,149 @@
       "section": "International",
       "report_category": "International",
       "source": "Al Jazeera",
+      "district": "",
+      "lang": "en"
+    },
+    {
+      "id": "2e352ff0d9046c2b19fd3e147c8e9e7a",
+      "title": "Serbia’s Vucic concedes defeat as student-led movement wins parliamentary election",
+      "link": "https://timesofindia.indiatimes.com/world/europe/serbias-vucic-concedes-defeat-as-student-led-movement-wins-parliamentary-election/articleshow/135199388.cms",
+      "summary": "",
+      "date": "2026-10-25",
+      "timestamp": "2026-10-26T04:56:13+05:30",
+      "section": "International",
+      "report_category": "International",
+      "source": "TOI World",
+      "district": "",
+      "lang": "en"
+    },
+    {
+      "id": "b11b32555659494f900c2411d935c0c3",
+      "title": "Raids on NE drug cartels reveal illicit deals worth Rs 270cr",
+      "link": "https://timesofindia.indiatimes.com/india/raids-on-ne-drug-cartels-reveal-illicit-deals-worth-rs-270cr/articleshow/135199368.cms",
+      "summary": "",
+      "date": "2026-10-25",
+      "timestamp": "2026-10-26T04:29:22+05:30",
+      "section": "National",
+      "report_category": "National_General",
+      "source": "TOI India",
+      "district": "",
+      "lang": "en"
+    },
+    {
+      "id": "3319e3335edb0691eb919f7c03777a67",
+      "title": "EAM to UN: Lead during global crises, don’t just be a spectator",
+      "link": "https://timesofindia.indiatimes.com/india/eam-to-un-lead-during-global-crises-dont-just-be-a-spectator/articleshow/135199353.cms",
+      "summary": "",
+      "date": "2026-10-25",
+      "timestamp": "2026-10-26T04:18:54+05:30",
+      "section": "National",
+      "report_category": "National_Opposition",
+      "source": "TOI India",
+      "district": "",
+      "lang": "en"
+    },
+    {
+      "id": "1c0cc2ddb5e0ac3f78a95e826d1b8492",
+      "title": "Massive fire engulfs Shiv Market near Jammu Railway Station, 35-40 shops gutted",
+      "link": "https://timesofindia.indiatimes.com/india/massive-fire-engulfs-shiv-market-near-jammu-railway-station-35-40-shops-gutted/articleshow/135199333.cms",
+      "summary": "",
+      "date": "2026-10-25",
+      "timestamp": "2026-10-26T04:08:58+05:30",
+      "section": "National",
+      "report_category": "National_General",
+      "source": "TOI India",
+      "district": "",
+      "lang": "en"
+    },
+    {
+      "id": "4712f24df2f93eab7e1dbdc4465a237f",
+      "title": "John Stamos’ former California mansion drops from $13 million to $6.4 million after renovations",
+      "link": "https://timesofindia.indiatimes.com/real-estate/news/in-1991-john-stamos-bought-six-acres-in-california-for-430000-and-built-a-mansion-after-later-owners-spent-over-3-million-renovating-it-its-asking-price-fell-from-13-million-to-6-4-million-by-2026/articleshow/135187010.cms",
+      "summary": "John Stamos’s luxurious California mansion has experienced substantial price drops since 2025. Initially, this Mediterranean-style estate in Calabasas was priced near $13 million, but after renovations by the current owners, it now stands at about $6.4 million. Stamos originally acquired the property in 1991 for $430,000 and sold it in 2001, illustrating the complexities in marketing highly personalized high-end real estate.",
+      "date": "2026-10-25",
+      "timestamp": "2026-10-26T03:55:00+05:30",
+      "section": "International",
+      "report_category": "International",
+      "source": "TOI World",
+      "district": "",
+      "lang": "en"
+    },
+    {
+      "id": "7b31bcaac186a76a68fd8568d11ae8f6",
+      "title": "Philadelphia Orchestra marks 14th China tour with $10.5m gift for global tours and new music",
+      "link": "https://timesofindia.indiatimes.com/world/us/in-1973-the-philadelphia-orchestra-became-the-first-us-orchestra-to-perform-in-china-ahead-of-its-14th-china-tour-former-ambassador-david-cohen-and-his-wife-pledged-10-5-million-to-support-global-tours-and-new-music/articleshow/135184610.cms",
+      "summary": "David L Cohen and Rhonda R Cohen have made an impressive commitment of $10.5 million to the Philadelphia Orchestra. This significant donation aims to fund international tours and foster cultural exchanges, while also introducing new music initiatives worldwide. Their contribution will establish the Fund for Cultural Diplomacy, enhancing the orchestra's role as a cultural ambassador, alongside launching the Artistic Innovation and Discovery Fund to spotlight underrepresented composers.",
+      "date": "2026-10-25",
+      "timestamp": "2026-10-26T03:50:00+05:30",
+      "section": "International",
+      "report_category": "International",
+      "source": "TOI World",
+      "district": "",
+      "lang": "en"
+    },
+    {
+      "id": "d8d6004fd365a7381a51148d864573b0",
+      "title": "Jaishankar to attend G20, Quad meets in US",
+      "link": "https://timesofindia.indiatimes.com/india/jaishankar-to-attend-g20-quad-meets-in-us/articleshow/135198010.cms",
+      "summary": "",
+      "date": "2026-10-25",
+      "timestamp": "2026-10-26T03:45:26+05:30",
+      "section": "National",
+      "report_category": "National_General",
+      "source": "TOI India",
+      "district": "",
+      "lang": "en"
+    },
+    {
+      "id": "e4a0722d8c7b191f4e5216dcd20729bd",
+      "title": "‘Creamy layer case in SC won’t hit seniority of CSE-2025 batch’",
+      "link": "https://timesofindia.indiatimes.com/india/creamy-layer-case-in-sc-wont-hit-seniority-of-cse-2025-batch-sources/articleshow/135197595.cms",
+      "summary": "",
+      "date": "2026-10-25",
+      "timestamp": "2026-10-26T03:27:38+05:30",
+      "section": "National",
+      "report_category": "National_Judicial",
+      "source": "TOI India",
+      "district": "",
+      "lang": "en"
+    },
+    {
+      "id": "694d118994b8c960e706697c32861e53",
+      "title": "CBSE makes AI a part of formal teaching, NCERT develops module",
+      "link": "https://timesofindia.indiatimes.com/india/cbse-makes-ai-a-part-of-formal-teaching-ncert-develops-module/articleshow/135197586.cms",
+      "summary": "",
+      "date": "2026-10-25",
+      "timestamp": "2026-10-26T03:15:06+05:30",
+      "section": "National",
+      "report_category": "National_General",
+      "source": "TOI India",
+      "district": "",
+      "lang": "en"
+    },
+    {
+      "id": "3cdd5d2385a75bbd604d2bfcca3b2aa6",
+      "title": "EC refuses to give details of SIR software, cites ‘trade secrets, IPR'",
+      "link": "https://timesofindia.indiatimes.com/india/ec-refuses-to-give-details-of-sir-software-cites-trade-secrets-ipr/articleshow/135197575.cms",
+      "summary": "Election Commission of India declined to share the name of the software used for identifying electoral roll errors. The request for information was made under the Right to Information Act. A social activist from Telangana sought details about the software and algorithms used in the process. The Commission stated that no new software was developed for the exercise conducted.",
+      "date": "2026-10-25",
+      "timestamp": "2026-10-26T03:04:41+05:30",
+      "section": "National",
+      "report_category": "National_General",
+      "source": "TOI India",
+      "district": "",
+      "lang": "en"
+    },
+    {
+      "id": "7b318d35aa1586912e7237ab9ff721fa",
+      "title": "Hendrie Ranch Conservation Easement: Florida approves $12.9m deal; wildlife corridor stays working",
+      "link": "https://timesofindia.indiatimes.com/world/us/after-65-years-of-family-ranching-florida-approved-a-12-9-million-easement-to-permanently-protect-5610-acres-of-hendrie-ranch-while-cattle-hay-and-timber-operations-continue/articleshow/135190750.cms",
+      "summary": "A 5,610-acre section of Hendrie Ranch will remain undeveloped due to a $12.9 million conservation easement. This agreement, approved by state officials, allows continued agricultural use while protecting the land from development. The ranch supports cattle, hay production, and timber harvesting alongside diverse wildlife habitats. It is part of Florida's Rural and Family Lands Protection Program to safeguard agricultural properties.",
+      "date": "2026-10-25",
+      "timestamp": "2026-10-26T02:50:00+05:30",
+      "section": "International",
+      "report_category": "International",
+      "source": "TOI World",
       "district": "",
       "lang": "en"
     },
